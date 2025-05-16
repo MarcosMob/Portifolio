@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+        .dark .timeline-item:not(:last-child)::after {
+            background: #4b5563;
+        }
+        .dark-toggle {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Dark Mode Toggle -->
+    
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-40 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-xl font-bold gradient-text">MeuPortfólio</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-blue-500 dark:hover:text-blue-400 transition">Sobre</a>
+                    <a href="#projects" class="hover:text-blue-500 dark:hover:text-blue-400 transition">Projetos</a>
+                    <a href="#experience" class="hover:text-blue-500 dark:hover:text-blue-400 transition">Experiência</a>
+                    <a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-400 transition">Contato</a>
+                </div>
+                <button class="md:hidden" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-4 py-2 space-y-3">
+                <a href="#about" class="block py-2 hover:text-blue-500 dark:hover:text-blue-400 transition">Sobre</a>
+                <a href="#projects" class="block py-2 hover:text-blue-500 dark:hover:text-blue-400 transition">Projetos</a>
+                <a href="#experience" class="block py-2 hover:text-blue-500 dark:hover:text-blue-400 transition">Experiência</a>
+                <a href="#contact" class="block py-2 hover:text-blue-500 dark:hover:text-blue-400 transition">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+   <section class="min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 py-20 md:py-32">
+            <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Olá, eu sou <span class="gradient-text">Marcos</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Cientista de Dados, <span class="gradient-text">Estudante de Engenharia da Computação</span></h2>
+                <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">Crio soluções a partir de dados a fim de proporcionar análises robustas e contribuir para a criação de modelos preditivos que otimizam processos e geram insights relevantes.</p>
+                <div class="flex space-x-4">
+                <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition">Ver Projetos</a>
+                <a href="#contact" class="px-6 py-3 border border-blue-500 text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg font-medium transition">Contato</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                <!-- Container circular -->
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl">
+                    <img src="./images/a3a43df4-22bb-4bc2-9dc4-86be694f6afe.jpeg" alt="Foto de Marcos" class="w-full h-full object-cover object-top">
+                </div>
+                <div class="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg">
+                    <p class="font-bold">Estudante</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400"></p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Sobre <span class="gradient-text">Mim</span></h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-full bg-gray-300 dark:bg-gray-700 overflow-hidden shadow-lg">
+                        <!-- Substitua por sua foto -->
+                        <div class="w-full h-full flex items-center justify-center text-4xl">
+                            <img src="./images/a3a43df4-22bb-4bc2-9dc4-86be694f6afe.jpeg" alt="Foto de Marcos" class="w-full h-full object-cover object-top">
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">Quem sou eu?</h3>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        Sou Marcos Vinicius, estudante de Engenharia da Computação no IFSULDEMINAS e entusiasta da área de dados. Atualmente, atuo em um projeto de pesquisa da FAPEMIG, onde desenvolvo um sistema de recomendação utilizando técnicas de IA e Machine Learning, além de aplicar NLP para vetorização de textos. Tenho experiência com Python (Pandas, Scikit-Learn, NLTK), SQL e ferramentas de visualização como Matplotlib e Seaborn.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <i class="fas fa-robot text-blue-500 mb-2 text-xl"></i>
+                            <h4 class="font-semibold">Data Science</h4>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <i class="fas fa-line-chart text-blue-500 mb-2 text-xl"></i>
+                            <h4 class="font-semibold">Data Analytics</h4>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow">
+                            <i class="fas fa-database text-blue-500 mb-2 text-xl"></i>
+                            <h4 class="font-semibold">SQL</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Minhas Habilidades:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Python</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Pandas</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Scikit-Learn</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Matplotlib</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Seaborn</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Meus <span class="gradient-text">Projetos</span></h2>
+            
+            <!-- Featured Project -->
+            <div class="mb-16">
+                <h3 class="text-xl font-semibfold mb-6 text-center">Destaque</h3>
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition duration-300 project-card">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2">
+                            <div class="h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center p-8">
+                                <!-- container do seu card -->
+                                <div class="w-full h-64 rounded-lg overflow-hidden">
+                                <!-- Swiper -->
+                                <div class="swiper-container h-full">
+                                    <div class="swiper-wrapper h-full">
+                                    <!-- Slides: um slide para cada imagem -->
+                                    <div class="swiper-slide h-full">
+                                        <img src="/images/lta_radar.jpeg" class="w-full h-full object-cover" alt="">
+                                    </div>
+                                    <div class="swiper-slide h-full">
+                                        <img src="/images/lta_radar_1.jpeg" class="w-full h-full object-cover" alt="">
+                                    </div>
+                                    <div class="swiper-slide h-full">
+                                        <img src="/images/lta_radar_2.jpeg" class="w-full h-full object-cover" alt="">
+                                    </div>
+                                    <!-- adicione quantos slides quiser -->
+                                    </div>
+                                    <!-- setas de navegação -->
+                                    <div class="swiper-button-next text-white"></div>
+                                    <div class="swiper-button-prev text-white"></div>
+                                    <!-- bolinhas de paginação -->
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-8">
+                            <h4 class="text-2xl font-bold mb-2">LTA Radar - Projeto em Produção</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                                Um projeto completo que está em produção, com código fechado mas disponível para uso público.
+                                A ideia do projeto é gerar gráficos de Radar comparando jogadores e times das maiores ligas competitivas de LoL,  além de um sistema de recomendação de times para o Fantasy.
+                                Utilizando selenium e beautifulsoup para scrapping de dados e Pandas,Matplotlib, Numpy para geração dos gráficos.Aplicação web com backend em Flask e deploy com PythonAnywhere.
+                            </p>
+                            <div class="mb-6">
+                                <h5 class="font-semibold mb-2">Tecnologias utilizadas:</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded">Flask</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded">Selenium</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded">BeautifulSoup</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded">Pandas</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded">Matplotlib</span>
+                                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded">Python</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-3">
+                                <a href="https://ltaradar.pythonanywhere.com/" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition" target="_blank">Visitar Site</a>
+                                <button class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded transition opacity-50 cursor-not-allowed" disabled>
+                                    Código Fechado
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GitHub Projects -->
+            <h3 class="text-xl font-semibold mb-6 text-center">Projetos Open Source</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition duration-300 project-card">
+                    <div class="h-48 rounded-lg overflow-hidden">
+                    <!-- Swiper -->
+                    <div class="swiper-container h-full">
+                        <div class="swiper-wrapper h-full">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                           <img src="/images/riot_project_1.jpeg" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                            <!-- Pode ser outro ícone ou imagem -->
+                            <img src="/images/riot_project_2.jpeg" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                            <img src="/images/riot_project_3.jpeg" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <!-- ...adapte conforme seu projeto -->
+                        </div>
+                        <!-- setas -->
+                        <div class="swiper-button-next text-gray-600 dark:text-gray-300"></div>
+                        <div class="swiper-button-prev text-gray-600 dark:text-gray-300"></div>
+                        <!-- paginação -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    </div>
+
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Riot Project</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                           Projeto utilizando a API da Riot Games para conseguir dados e formar um dataset para trabalhar com:
+                           Extração dos dados : chamadas à API da Riot, coletando dados de jogadores, partidas e informações sobre as partidas.Depois de extraidos, salvo os dados em documentos CSV's e carrego para os modelos de Machine Learning trabalharem com eles depois de pré processados.
+                            EDA : Análise Exploratória dos dados, para descobrir padrões, normalizar e pré processar os dados para os modelos de Machine Learning
+                            ML : Utilização de modelos para prever vitórias e derrotas dado as partidas de um jogador, no caso utilizei os dados do jogador Arthur Lanches
+                            
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="px-1 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">API-Requests</span>
+                                <span class="px-1 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">Scikit-Learn</span>
+                            </div>
+                            <a href="https://github.com/MarcosMob/RiotProject" class="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400" target="_blank">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition duration-300 project-card">
+                    <div class="h-48 rounded-lg overflow-hidden">
+                    <!-- Swiper -->
+                    <div class="swiper-container h-full">
+                        <div class="swiper-wrapper h-full">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                           <img src="/images/javacrud1.jpeg" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                            <!-- Pode ser outro ícone ou imagem -->
+                            <img src="/images/javacrud2.jpeg" class="w-full h-full object-cover" alt="">
+                        </div>
+                        <!-- ...adapte conforme seu projeto -->
+                        </div>
+                        <!-- setas -->
+                        <div class="swiper-button-next text-gray-600 dark:text-gray-300"></div>
+                        <div class="swiper-button-prev text-gray-600 dark:text-gray-300"></div>
+                        <!-- paginação -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Biblioteca CRUD em Java</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                            Projeto Java em conjunto com MySQL para simulação de um banco de dados de uma biblioteca. Trabalho criado como avaliacao na faculdade.
+
+                            Neste projeto, foi criado um sistema gerenciador de banco de dados de uma biblioteca, nele você poderá adicionar,editar,remover, etc. Sendo cada classe a representação de uma taela no SQL, temos outras funcoes como emprestar e devolver algum livro.
+                        </p>
+                        <br>
+                        <br><br><br><br>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">Java</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">MySQL</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">CRUD</span>
+                            </div>
+                            <a href="https://github.com/MarcosMob/BibliotecaJavaWithMySQL" class="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400" target="_blank">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition duration-300 project-card">
+                    <div class="h-48 rounded-lg overflow-hidden">
+                    <!-- Swiper -->
+                    <div class="swiper-container h-full">
+                        <div class="swiper-wrapper h-full">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                           <img src="/images/clientes1.jpeg" class="w-full h-full object-cover object-top" alt="">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide h-full fflex items-center justify-center bg-gray-200 dark:bg-gray-700">
+                            <!-- Pode ser outro ícone ou imagem -->
+                            <img src="/images/clientes2.jpeg" class="w-full h-full object-cover object-top" alt="">
+                        </div>
+                        <!-- ...adapte conforme seu projeto -->
+                        </div>
+                        <!-- setas -->
+                        <div class="swiper-button-next text-gray-600 dark:text-gray-300"></div>
+                        <div class="swiper-button-prev text-gray-600 dark:text-gray-300"></div>
+                        <!-- paginação -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Gerencia Clientes</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">
+                            Projeto desenvolvido em Python e MySQL para controlar um banco de dados de clientes, neste projeto você pode adicionar e listar todos clientes cadastrados no sistema, além disso, pode mandar uma mensagem automática via Whatsapp se tiver finalizado o pedido.
+                        </p><br><br><br><br><br><br><br><br>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">MySQL</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">Pywhatkit</span>
+                            </div>
+                            <a href="https://github.com/MarcosMob/Gerencia_Clientes/tree/main" class="text-blue-500 hover:text-blue-600 dark:hover:text-blue-400">
+                                <i class="fab fa-github"></i> Ver no GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://github.com/MarcosMob" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                    <i class="fab fa-github mr-2"></i> Ver todos no GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Minha <span class="gradient-text">Experiência</span></h2>
+            
+            <div class="relative">
+                <!-- Experiência 1 -->
+                <div class="mb-12 timeline-item relative pl-16">
+                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Pesquisador científico</h3>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Atual</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-blue-500 dark:text-blue-400 mb-2">FAPEMIG</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Out 2024 - Presente</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Extração de dados via banco de dados PostgreSQL</li>
+                            <li>Processamento, limpeza e manipulação de dados</li>
+                            <li>Desenvolvimento de um sistema de recomendação utilizando técnicas e algoritmos de IA e Machine Learning</li>
+                            <li>Aplicação de técnicas de NLP para vetorização de textos, incluindo TF-IDF, Word2Vec e GloVe para representações numéricas e semânticas</li>
+                            <li>Estatística e métricas de similaridade</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experiência 2 -->
+                <div class="mb-12 timeline-item relative pl-16">
+                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Professor Estágiario</h3>
+                        <h4 class="text-lg font-semibold text-blue-500 dark:text-blue-400 mb-2">Microcamp</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Jul 2023 - Out 2024</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Responsável por ministrar aulas de Hardware e Informática em grande parte do tempo e por um breve período de tempo os cursos de Gestão Administrativa e Inglês</li>
+                            <li>Explicar conceitos, tirar dúvidas sobre assuntos correlatos às matérias ministradas, como programação,planilhas, redes, elétrica, etc.</li>
+                            <li>Criar atividades, preparar conteúdo de aula e avaliação dos alunos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experiência 3 -->
+                <div class="timeline-item relative pl-16">
+                    <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Formação Acadêmica</h3>
+                        <h4 class="text-lg font-semibold text-blue-500 dark:text-blue-400 mb-2">IFSULDEMINAS - Câmpus Poços de Caldas</h4>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">2021 - Em Andamento</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
+                            <li>Bacharelado em Engenharia da Computação</li>
+                            <li>Participação em projetos de extensão e iniciação científica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Entre em <span class="gradient-text">Contato</span></h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Vamos conversar!</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Estou sempre aberto a novas oportunidades, colaborações ou apenas para bater um papo sobre tecnologia e a área de dados. 
+                        Sinta-se à vontade para me enviar uma mensagem através do meu e-mail, LinkedIn ou X.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-500 dark:text-blue-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                                <a href="mailto:seu@email.com" class="hover:text-blue-500 dark:hover:text-blue-400">marcosviniciusalmeidamvp@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in text-blue-500 dark:text-blue-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/marcos-vinicius-de-almeida-085b86272/" target="_blank" class="hover:text-blue-500 dark:hover:text-blue-400">linkedin.com/in/Marcos</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mr-4">
+                                <i class="fab fa-github text-blue-500 dark:text-blue-300"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">GitHub</p>
+                                <a href="https://github.com/MarcosMob" target="_blank" class="hover:text-blue-500 dark:hover:text-blue-400">github.com/MarcosMob</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 py-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">Marcos Vinicius de Almeida</a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://x.com/DevMarcosA" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/marcos-vinicius-de-almeida-085b86272/" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/MarcosMob" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-500 dark:text-gray-400 text-sm">
+                <p>© 2025 Marcos Vinicius de Almeida. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkToggle = document.getElementById('darkToggle');
+        const darkIcon = document.getElementById('darkIcon');
+        const html = document.documentElement;
+        
+        // Check for saved user preference or use OS preference
+        const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        
+        if (savedTheme === 'dark' || (!savedTheme && userPrefersDark)) {
+            html.classList.add('dark');
+            darkIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+        
+        darkToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            
+            if (html.classList.contains('dark')) {
+                darkIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                darkIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,               // faz loop infinito
+            pagination: {
+            el: '.swiper-pagination',
+            clickable: true,        // bolinhas clicáveis
+            },
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+            delay: 5000,            // troca automática a cada 5s
+            disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+</html>
